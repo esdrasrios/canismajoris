@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
-import VideoBg from "./VideoBg";
+
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -11,7 +11,7 @@ import Results from "./SearchResults";
 
 const App = () => (
   <div className="container">
-    <VideoBg />
+    {/* <VideoBg /> */}
     <MuiThemeProvider>
       <Header />
       <Form />

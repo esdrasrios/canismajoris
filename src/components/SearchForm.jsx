@@ -12,6 +12,7 @@ import { renderTextField } from "./TextField";
 import { renderSelectField } from "./SelectField";
 
 import { fetchCity } from "../actions/index";
+import VideoBg from "./VideoBg";
 
 const style = {
   width: 340,
@@ -27,7 +28,8 @@ class SearchForm extends Component {
   render() {
     return (
       <div className="main_content">
-        <div className="main_content_left"> Quanto vale seu sonho?</div>
+      <VideoBg />
+        <div className="main_content_left"><h2> Quanto vale seu sonho?</h2></div>
         <div className="main_content_right">
           <Paper style={style} zDepth={3}>
             <form
