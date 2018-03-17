@@ -1,5 +1,5 @@
 import React from "react";
-import { SelectField } from "material-ui";
+import SelectField from 'material-ui/SelectField';
 
 export const renderSelectField = ({
   input,

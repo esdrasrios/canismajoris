@@ -19,8 +19,6 @@
     "redux-form": "^7.3.0",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0",
-    "semantic-ui-css": "^2.3.0",
-    "semantic-ui-react": "^0.78.3",
     "thunk": "0.0.1"
   },
   "scripts": {
