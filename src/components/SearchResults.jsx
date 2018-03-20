@@ -2,38 +2,69 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 class SearchResults extends Component {
-  renderSchoolName() {
-    const schoolType = this.props.form.schoolType;
-    const city = this.props.city[0];
-    if (schoolType == "budget") {
-      return city.schoolBudget.name;
-    } else if (schoolType == "middle") {
-      return city.schoolMiddle.name;
-    } else if (schoolType == "top") return city.schoolTop.name;
+  renderSchool() {
+    const city = this.props.city;
+    return (
+      <div className="results-school">
+        <div> Escolhida: {city.school.name}</div>
+        <div> Categoria: {city.school.sType}</div>
+        <div> Escola: R${city.schoolPrice} </div>
+      </div>
+    );
   }
 
-  renderSchoolPrice(value) {
-    return this.props.city.finalPriceSchool;
+  renderAccommodation() {
+    const city = this.props.city;
+    return (
+      <div className="results-accommodation">
+        <div> Acomodação: R${city.accommodationPrice} </div>
+      </div>
+    );
+  }
+
+  renderFood() {
+    const city = this.props.city;
+    return (
+      <div className="results-food">
+        <div> Comida: R${city.accommodationPrice} </div>
+      </div>
+    );
+  }
+
+  renderOtherUtilites() {
+    const city = this.props.city;
+    return (
+      <div className="results-utilities">
+        <div> Transporte: R${city.transportPrice}</div>
+        <div> Utilidades Domésticas: R${city.utilitiesPrice}</div>
+      </div>
+    );
   }
 
   renderCity() {
     const city = this.props.city;
-    if (!this.props.city[0]) {
+    if (!this.props.city.city) {
       return console.log("you must select a city");
     }
     return (
-      <div className="search-results_main">
-        <div>
-          <h1>Search Results</h1>
+      <div className="search-results">
+        <div className="search-results_main">
+          <div className="search-results_title">
+            <h1>Search Results</h1>
+          </div>
+          <div className="search-results_body">
+            <div> {city.city.country}#flag</div>
+          </div>
         </div>
-        <div> Nome: {city[0].city.name}</div>
-        <div> Pais: {city[0].city.country}</div>
-
-        <div> Escola: R${city.schoolFinalPrice} </div>
-        <div> Acomodação: R${city.accommodationFinalPrice} </div>
-        <div> Comida: R${city.foodFinalPrice} </div>
-        <div> Transporte: R${city.transportFinalPrice}</div>
-        <div> Utilidades Domésticas: R${city.utilitiesFinalPrice}</div>
+        <div className="results-container">
+          <div className="results-main-div">
+            <div><h2>{city.city.name}</h2></div>
+            {this.renderSchool()}
+            {this.renderAccommodation()}
+            {this.renderFood()}
+            {this.renderOtherUtilites()}
+          </div>
+        </div>
       </div>
     );
   }
@@ -44,7 +75,7 @@ class SearchResults extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
+  console.log(state.city);
   return { city: state.city, form: state.form.searchForm.values };
 }
 

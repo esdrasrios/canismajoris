@@ -9,29 +9,23 @@ body {
 
 }
 
+
 .header-title {
   
   margin-left: 1.5rem;
   margin-top: 1rem;
   font-size: 2.5rem;
   position: absolute;
-  display: inline;
   color: white;
   font-family: 'Roboto', sans-serif;
   font-size: 1.5rem;
   font-weight: 900;
 }
 
-.header-title h3 {
- 
-}
-
 .header-title img {
   height: 2rem;
 }
 
-.video-bg {  
-}
 
 .video-bg video {
   
@@ -69,10 +63,6 @@ body {
 
 .main_content {
   display: flex;
-  position: relative;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   height: 650px;
 }
 
@@ -93,20 +83,106 @@ body {
   flex: 1;
 }
 
-.search-results_main {
+.search-results {
   display: flex;
   flex-direction: column;
   background-color: tomato;
   height: 38rem;
-  flex-grow: 1;
+  align-content: flex-end;
+
 }
+
+.search-results_main {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-results_title h1 {
+  color: snow;
+  font-weight: 900;
+  font-family: 'Roboto', sans-serif;
+  font-size: 3rem;
+}
+
+
+.search-results_body {
+  display: flex;
+  justify-content: space-around;
+  color: snow;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.2rem;
+  
+}
+
+.results-container {
+  background-color: snow;
+  width: 100vw;
+  height: 50vh;
+}
+
+.results-main-div {
+  width: 70%;
+  height: 100%;
+  background-color: slateblue;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.results-main-div h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 1.8rem;
+  letter-spacing: 0.2rem;
+  align-self: center;
+  align-content: center;
+}
+
+
+.results-school {
+  width: 80%;
+  height: 5rem;
+  background-color: sienna;
+  display: flex;
+  justify-content: space-around;
+}
+
+.results-accommodation {
+  width: 80%;
+  height: 5rem;
+  background-color: #FFEBEE;
+  display: flex;
+  justify-content: space-around;
+}
+
+.results-food {
+  width: 80%;
+  height: 5rem;
+  background-color: rgb(45, 133, 160);
+  display: flex;
+  justify-content: space-around;
+}
+
+.results-utilities {
+  width: 80%;
+  height: 5rem;
+  background-color: rgb(217, 219, 74);
+  display: flex;
+  justify-content: space-around;
+}
+
+
 
 .footer {
   font-size: 0.8rem;
   font-family: 'Roboto', sans-serif;
   display: flex;
   height: 2.5rem;
-  background-color:#212121;
+  background-color:#FFEBEE;
   color: #EF5350;
   text-align: center;
   justify-content: center;
@@ -166,3 +242,4 @@ body {
       font-size: 30px;
   }
 }
+
