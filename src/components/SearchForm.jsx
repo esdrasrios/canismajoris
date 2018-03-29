@@ -14,6 +14,8 @@ import { renderSelectField } from "./SelectField";
 import { fetchCity } from "../actions/index";
 import VideoBg from "./VideoBg";
 
+import scrollToComponent from 'react-scroll-to-component';
+
 const style = {
   width: 340,
   padding: 40
