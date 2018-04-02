@@ -4,7 +4,7 @@ import scrollToComponent from 'react-scroll-to-component';
 
 class SearchResults extends Component {
 componentDidUpdate(){
-  scrollToComponent(this.city, { offset: 0, align: 'middle', duration: 500, ease:'inCirc'});
+  scrollToComponent(this.city, { offset: 0, align: 'middle', duration: 300, ease:'inCirc'});
 }
 
   renderSchool() {
@@ -121,7 +121,7 @@ componentDidUpdate(){
       <div className="results__total">
         <div className="results__total--title">PREÇO FINAL</div>
         <div className="results__total--main">
-        R$123,00
+        R$53.323,00
         </div>
       </div>
     )
@@ -133,10 +133,8 @@ componentDidUpdate(){
       return console.log("you must select a city");
     }
     return (
-      // <div className="search-results">
         <div className="results-container">
-        <div><h2>{city.city.name}</h2></div>
-        {/* <div><h2>1</h2></div> */}
+        <h2>{city.city.name}</h2>
           <div className="results__main--div">
             {this.renderSchool()}
             {this.renderAccommodation()}
@@ -144,7 +142,6 @@ componentDidUpdate(){
           </div>
           {this.renderTotal()}  
         </div>
-      // </div>
     );
   }
 
