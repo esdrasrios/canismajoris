@@ -10,6 +10,7 @@ import { MenuItem } from "material-ui";
 
 import { renderTextField } from "./TextField";
 import { renderSelectField } from "./SelectField";
+import { renderSliderField } from "./SliderField";
 
 import { fetchCity } from "../actions/index";
 import VideoBg from "./VideoBg";
@@ -30,7 +31,6 @@ class SearchForm extends Component {
   render() {
     return (
       <div className="main_content">
-      <VideoBg />
         <div className="main_content_left"><h2> Quanto vale seu sonho?</h2></div>
         <div className="main_content_right">
           <Paper style={style} zDepth={3}>
@@ -47,7 +47,7 @@ class SearchForm extends Component {
                   placeholder="ex: Londres"
                 />
               </div>
-              <div>
+              {/* <div>
                 <Field
                   name="time"
                   component={renderSelectField}
@@ -58,7 +58,7 @@ class SearchForm extends Component {
                   <MenuItem value="12" primaryText="3 Meses" />
                   <MenuItem value="24" primaryText="6 Meses" />
                 </Field>
-              </div>
+              </div> */}
               <div>
                 <Field
                   name="schoolType"
@@ -107,6 +107,25 @@ class SearchForm extends Component {
                   />
                 </Field>
               </div>
+              <div>
+          <Field
+            name="time"
+            component={renderSliderField}
+            defaultValue={0}
+            format={null}
+            min={0}
+            max={50}
+            step={1}
+          />
+        </div>
+
+              {/* <div className="search__slider">
+              <h3>Por quanto tempo </h3>
+                <Field 
+                name="time"
+                component={renderSliderField}
+                />
+              </div> */}
 
               <div>
                 {/* onClick={this.props.handleSubmit(values => {submitNewCity(values)})} */}
@@ -114,6 +133,7 @@ class SearchForm extends Component {
                   type="submit"
                   label="Pesquisar"
                   secondary={true}
+                  style={{marginTop: 20}}
                 />
               </div>
             </form>
@@ -125,7 +145,10 @@ class SearchForm extends Component {
 }
 
 const City = reduxForm({
-  form: "searchForm" // a unique identifier for this form
+  form: "searchForm", // a unique identifier for this form
+  initialValues: {
+    time: 25
+  }
 })(SearchForm);
 
 export default connect(null, { fetchCity })(City);
