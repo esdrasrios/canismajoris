@@ -31,9 +31,8 @@ class SearchForm extends Component {
   render() {
     return (
       <div className="main_content">
-        <div className="main_content_left"><h2> Quanto vale seu sonho?</h2></div>
+        <div className="main_content_left"><h2> Quanto vale seu sonho?</h2><h3>Nós te ajudamos a calcular tudo!</h3></div>
         <div className="main_content_right">
-          <Paper style={style} zDepth={3}>
             <form
               onSubmit={this.props.handleSubmit(values => {
                 this.props.fetchCity(values);
@@ -43,27 +42,28 @@ class SearchForm extends Component {
                 <Field
                   name="cityName"
                   component={renderTextField}
-                  label="Quero ir estudar e morar em"
+                  label="Quero ir para"
                   placeholder="ex: Londres"
                 />
               </div>
-              {/* <div>
+              <div>
                 <Field
                   name="time"
                   component={renderSelectField}
-                  label="Por quanto tempo?"
+                  label="Por esse tempo"
                   placeholder="ex: 3 Meses"
                 >
                   <MenuItem value="4" primaryText="1 Mês" />
                   <MenuItem value="12" primaryText="3 Meses" />
                   <MenuItem value="24" primaryText="6 Meses" />
+                  <MenuItem value="52" primaryText="12 Meses" />
                 </Field>
-              </div> */}
+              </div>
               <div>
                 <Field
                   name="schoolType"
                   component={renderSelectField}
-                  label="Qual o nível da escola?"
+                  label="No tipo de escola"
                   placeholder="ex: Top"
                 >
                   <MenuItem value="budget" primaryText="Budget" />
@@ -75,7 +75,7 @@ class SearchForm extends Component {
                 <Field
                   name="accommodationType"
                   component={renderSelectField}
-                  label="Qual tipo de hospedagem?"
+                  label="No tipo de hospedagem"
                   placeholder="ex: Apartamento"
                 >
                   <MenuItem value="hostel" primaryText="Hostel" />
@@ -86,7 +86,7 @@ class SearchForm extends Component {
                   <MenuItem value="ap" primaryText="Apartamento 2-3 Quartos" />
                 </Field>
               </div>
-              <div>
+              {/* <div>
                 <Field
                   name="foodType"
                   component={renderSelectField}
@@ -106,8 +106,8 @@ class SearchForm extends Component {
                     primaryText="Restaurante Caro"
                   />
                 </Field>
-              </div>
-              <div>
+              </div> */}
+              {/* <div>
           <Field
             name="time"
             component={renderSliderField}
@@ -117,7 +117,7 @@ class SearchForm extends Component {
             max={50}
             step={1}
           />
-        </div>
+        </div> */}
 
               {/* <div className="search__slider">
               <h3>Por quanto tempo </h3>
@@ -133,11 +133,10 @@ class SearchForm extends Component {
                   type="submit"
                   label="Pesquisar"
                   secondary={true}
-                  style={{marginTop: 20}}
+                  style={{marginTop: 20, marginRight:20}}
                 />
               </div>
             </form>
-          </Paper>
         </div>
       </div>
     );
@@ -145,10 +144,7 @@ class SearchForm extends Component {
 }
 
 const City = reduxForm({
-  form: "searchForm", // a unique identifier for this form
-  initialValues: {
-    time: 25
-  }
+  form: "searchForm"
 })(SearchForm);
 
 export default connect(null, { fetchCity })(City);

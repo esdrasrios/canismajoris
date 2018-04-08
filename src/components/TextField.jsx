@@ -13,6 +13,7 @@ export const renderTextField = ({
     hintText={placeholder}
     floatingLabelText={label}
     floatingLabelFixed={true}
+    style={{width: 200, marginRight: 30}}
     errorText={touched && error}
     {...input}
     {...custom}

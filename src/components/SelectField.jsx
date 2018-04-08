@@ -13,6 +13,7 @@ export const renderSelectField = ({
     floatingLabelText={label}
     floatingLabelFixed={true}
     hintText={placeholder}
+    style={{marginRight:30, width:200}}
     {...input}
     onChange={(event, index, value) => input.onChange(value)}
     children={children}
