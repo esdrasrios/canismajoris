@@ -6,17 +6,26 @@ body {
 
 .container {
   height: 100vh;
-  background-color: #01579b;
+  background-color: #B71C1C;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .header__container {
   width: 100%;
   /* background-color: #424242; */
   margin: 0;
-  padding: 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
 }
 
 .header__logo {
+  flex: 0 0 90%;
   margin-left: 1.5rem;
   font-size: 2.5rem;
   /* position: absolute; */
@@ -28,6 +37,13 @@ body {
 
 .header__logo img {
   height: 2rem;
+}
+
+.header__menu {
+  flex: 1;
+  color: white;
+  font-size: 1.75rem;
+  align-self: center;
 }
 
 .main_content {
@@ -106,8 +122,8 @@ body {
 .results-container h2 {
   color: #ff1744;
   font-family: "Roboto", sans-serif;
-  font-weight: 900;
-  font-size: 4rem;
+  font-weight: 400;
+  font-size: 3rem;
   margin: 1rem;
   letter-spacing: 0.2rem;
   align-self: center;
@@ -194,7 +210,7 @@ RESULTS */
 .results {
   height: 25rem;
   border-radius: 1rem;
-  background-color: snow;
+  background-color: #FAFAFA;
   flex: 0 0 25%;
   display: flex;
   flex-direction: column;
@@ -349,7 +365,7 @@ ACCOMMODATIOn */
   font-family: "Roboto", sans-serif;
   display: flex;
   height: 2.5rem;
-  background-color: #ffebee;
+  background-color: #F5F5F5;
   color: #ef5350;
   text-align: center;
   justify-content: center;
@@ -360,36 +376,6 @@ ACCOMMODATIOn */
 .footer img {
   height: 20px;
 }
-
-/* .main_content {
-  padding: 20px;
-  display: flex;
-  height: 500px;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.main_content_left {
-  position: absolute; 
-  align-self: flex-start;
-  font-family: 'Roboto', sans-serif;
-  letter-spacing: 2px;
-  font-weight: 900;
-  font-size: 50px;
-  text-align: right;
-  background-color: bisque;
-  margin: auto;
-}
-
-.main_content_right {
-  position: absolute; 
-  align-self: flex-end;
-  margin-left: auto;
-  align-self: center;
-  justify-content: center;
-} */
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
   .main_content_left {

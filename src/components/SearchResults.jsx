@@ -29,7 +29,7 @@ componentDidUpdate(){
         <div className="results__subitem"> 
           <div className="results__subitem--body">
           <div className="results__subitem--title">DETALHES</div>
-           <div className="results__subitem--main"><a href={city.school.url}> ver escola</a></div>
+           <div className="results__subitem--main"><a href={city.school.url} target="_blank"> Ver escola</a></div>
           </div>
         </div>
         <div className="results__subitem"> 
@@ -65,7 +65,7 @@ componentDidUpdate(){
         <div className="results__subitem"> 
           <div className="results__subitem--body">
           <div className="results__subitem--title">DETALHES</div>
-           <div className="results__subitem--main"><a href={city.accommodation.url}> ver hospedagem </a></div>
+           <div className="results__subitem--main"><a href={city.accommodation.url} target="_blank"> Ver hospedagem </a></div>
           </div>
         </div>
         <div className="results__subitem"> 
@@ -132,7 +132,7 @@ componentDidUpdate(){
     }
     return (
         <div className="results-container">
-        <h2>{city.city.name}</h2>
+        <h2>{city.city.name} | {city.city.country.toUpperCase()} | {city.city.avgTemp}º</h2>
           <div className="results__main--div">
             {this.renderSchool()}
             {this.renderAccommodation()}
