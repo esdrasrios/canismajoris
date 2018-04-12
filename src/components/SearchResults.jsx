@@ -29,7 +29,7 @@ componentDidUpdate(){
         <div className="results__subitem"> 
           <div className="results__subitem--body">
           <div className="results__subitem--title">DETALHES</div>
-           <div className="results__subitem--main">ver escola</div>
+           <div className="results__subitem--main"><a href={city.school.url}> ver escola</a></div>
           </div>
         </div>
         <div className="results__subitem"> 
@@ -41,8 +41,6 @@ componentDidUpdate(){
       </div>
     );
   }
-
-  
 
   renderAccommodation(){
     const city = this.props.city;
@@ -67,7 +65,7 @@ componentDidUpdate(){
         <div className="results__subitem"> 
           <div className="results__subitem--body">
           <div className="results__subitem--title">DETALHES</div>
-           <div className="results__subitem--main">ver hospedagem</div>
+           <div className="results__subitem--main"><a href={city.accommodation.url}> ver hospedagem </a></div>
           </div>
         </div>
         <div className="results__subitem"> 
@@ -102,12 +100,12 @@ componentDidUpdate(){
         <div className="results__subitem"> 
           <div className="results__subitem--body">
            <div className="results__subitem--title">ÁGUA,LUZ,INTERNET</div>
-           <div className="results__subitem--main">R${city.utilitiesPrice}/mês</div>
+           <div className="results__subitem--main">R${city.houseUtilitiesPrice}/mês</div>
           </div>
         </div>
         <div className="results__subitem"> 
           <div className="results__subitem--body">
-           <div className="results__subitem--price">R${city.accommodationPrice}</div>
+           <div className="results__subitem--price">R${city.allAditionalPrices}</div>
           </div>
         </div>
         </div>
@@ -121,7 +119,7 @@ componentDidUpdate(){
       <div className="results__total">
         <div className="results__total--title">PREÇO FINAL</div>
         <div className="results__total--main">
-        R$53.323,00
+        R${city.finalPrice}
         </div>
       </div>
     )
@@ -153,6 +151,7 @@ componentDidUpdate(){
 }
 
 function mapStateToProps(state) {
+  console.log(state.city)
   return { city: state.city, form: state.form.searchForm.values };
 }
 
